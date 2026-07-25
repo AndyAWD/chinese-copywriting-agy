@@ -1,6 +1,6 @@
-# Chinese Copywriting Guidelines for Antigravity CLI
+# Chinese Copywriting Guidelines for Antigravity Ecosystem
 
-一個 [Antigravity CLI (agy)](https://antigravity.google) 的外掛程式（Plugin）與技能（Skill），讓 Antigravity 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
+一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity Backup / Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## 這是什麼
 
-一份把 sparanoid 的中文排版指北封裝成 **Antigravity Plugin / Skill** 的套件。安裝後，當你請 Antigravity 撰寫或校對中文文件時，AI 會自動套用這些規則：
+一份把 sparanoid 的中文排版指北封裝成 **Antigravity Plugin / Skill** 的套件。安裝後，當你請 Antigravity (AGY CLI / IDE / Backup) 撰寫或校對中文文件時，AI 會自動套用這些規則：
 
 - 中文與英文、數字之間補上半形空格
 - 中文語境下使用全形標點（`，。！？「」`）
@@ -27,23 +27,32 @@
 - 開源專案維護者：維持 `.md` 文件排版一致性
 - 團隊協作：讓 AI 產出的中文內容有統一風格
 
-## 安裝方式
+## 安裝方式（適用全系列介面）
 
-### 方法一：外掛程式目錄安裝（Plugin）
+### 方法一：全域外掛程式目錄安裝（Plugin モード）
 
-將此專案複製（clone）至 Antigravity 外掛程式目錄：
+複製此專案至 Antigravity 全域外掛程式目錄，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity Desktop/Backup** 均可自動掃描並加載：
 
 ```bash
 git clone https://github.com/AndyAWD/chinese-copywriting-guidelines-agy.git ~/.gemini/config/plugins/chinese-copywriting-guidelines
 ```
 
-### 方法二：技能目錄安裝（Skill）
+### 方法二：全域技能目錄安裝（Skill モード）
 
-若僅需載入技能，可將 `skills/chinese-copywriting-guidelines` 複製至 Antigravity 技能目錄：
+若僅需載入技能，可將技能目錄複製至全域技能資料夾：
 
 ```bash
 mkdir -p ~/.gemini/skills
 cp -r skills/chinese-copywriting-guidelines ~/.gemini/skills/
+```
+
+### 方法三：專案本機工作區安裝（Workspace モード）
+
+複製至專案根目錄下的 `.agents/skills/` 資料夾，即可僅針對該專案生效：
+
+```bash
+mkdir -p .agents/skills
+cp -r skills/chinese-copywriting-guidelines .agents/skills/
 ```
 
 安裝完成後，Skill 會在處理校對中文、加空格、格式化 Markdown 文件等請求時自動觸發。

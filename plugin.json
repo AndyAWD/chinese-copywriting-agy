@@ -1,8 +1,25 @@
 {
   "name": "chinese-copywriting-guidelines",
   "version": "1.0.0",
-  "description": "Antigravity CLI (agy) plugin that applies sparanoid's Chinese Copywriting Guidelines — auto-spacing between CJK and Latin/numbers, full-width punctuation, correct proper-noun casing. 套用中文文案排版指北，讓 Antigravity 產出的中文文件符合中英數空格、全形標點、專有名詞大小寫等規範。",
-  "author": "AndyAWD",
+  "description": "Antigravity plugin for Chinese Copywriting Guidelines (sparanoid/chinese-copywriting-guidelines) - auto-spacing, full-width punctuation, and proper-noun casing across Antigravity CLI (agy), IDE, and Desktop/Backup.",
+  "author": {
+    "name": "AndyAWD",
+    "email": "anandydy529@gmail.com"
+  },
   "license": "MIT",
-  "homepage": "https://github.com/AndyAWD/chinese-copywriting-guidelines-agy"
+  "homepage": "https://github.com/AndyAWD/chinese-copywriting-guidelines-agy",
+  "repository": "https://github.com/AndyAWD/chinese-copywriting-guidelines-agy",
+  "keywords": [
+    "antigravity",
+    "agy",
+    "agy-cli",
+    "agy-ide",
+    "chinese",
+    "typography",
+    "copywriting",
+    "markdown",
+    "zh-tw",
+    "pangu",
+    "style-guide"
+  ]
 }

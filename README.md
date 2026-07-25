@@ -1,4 +1,4 @@
-# Chinese Copywriting Guidelines for Antigravity Ecosystem
+# Chinese Copywriting Guidelines for Antigravity Ecosystem (chinese-copywriting-agy)
 
 一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity Backup / Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
 
@@ -34,7 +34,7 @@
 複製此專案至 Antigravity 全域外掛程式目錄，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity Desktop/Backup** 均可自動掃描並加載：
 
 ```bash
-git clone https://github.com/AndyAWD/chinese-copywriting-guidelines-agy.git ~/.gemini/config/plugins/chinese-copywriting-guidelines
+git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/config/plugins/chinese-copywriting-agy
 ```
 
 ### 方法二：全域技能目錄安裝（Skill モード）

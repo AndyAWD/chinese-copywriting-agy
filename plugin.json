@@ -1,5 +1,5 @@
 {
-  "name": "chinese-copywriting-guidelines",
+  "name": "chinese-copywriting-agy",
   "version": "1.0.0",
   "description": "Antigravity plugin for Chinese Copywriting Guidelines (sparanoid/chinese-copywriting-guidelines) - auto-spacing, full-width punctuation, and proper-noun casing across Antigravity CLI (agy), IDE, and Desktop/Backup.",
   "author": {
@@ -7,11 +7,12 @@
     "email": "anandydy529@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/AndyAWD/chinese-copywriting-guidelines-agy",
-  "repository": "https://github.com/AndyAWD/chinese-copywriting-guidelines-agy",
+  "homepage": "https://github.com/AndyAWD/chinese-copywriting-agy",
+  "repository": "https://github.com/AndyAWD/chinese-copywriting-agy",
   "keywords": [
     "antigravity",
     "agy",
+    "chinese-copywriting-agy",
     "agy-cli",
     "agy-ide",
     "chinese",

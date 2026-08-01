@@ -1,4 +1,4 @@
-# Chinese Copywriting Guidelines for Antigravity Ecosystem (chinese-copywriting-agy)
+# 中文文案排版指北 —— Antigravity 生態系外掛程式 (chinese-copywriting-agy)
 
 一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
 
@@ -21,75 +21,71 @@
 - 專有名詞使用正確拼寫（`GitHub`、`iPhone`、`macOS`、`TypeScript`⋯）。
 - 不重複使用標點、不使用不道地的縮寫。
 
-## 誰適合用
+---
 
-- **部落客、技術寫作者**：讓 Antigravity 幫你產出的 README、部落格文章、技術文件自動符合規範。
-- **開源專案維護者**：維持 `.md` 文件排版一致性。
-- **團隊協作**：讓 AI 產出的中文內容有統一風格。
+## 安裝方式
 
-## 安裝方式（適用全系列介面）
+### 方法一：使用 `agy` CLI 指令安裝（Plugin 模式，推薦）
 
-### 方法一：全域外掛程式目錄安裝（Plugin 模式，推薦）
-
-將此專案複製至 Antigravity 全域外掛程式（Plugins）目錄，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity Desktop** 均可自動掃描並載入：
+執行 `agy` CLI 內建的外掛程式安裝指令：
 
 ```bash
-# 方式 A：複製至 agy CLI 外掛目錄
-git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/antigravity-cli/plugins/chinese-copywriting-agy
+agy plugin install https://github.com/AndyAWD/chinese-copywriting-agy
+```
 
-# 方式 B：複製至全域設定外掛目錄
+> CLI 會將外掛程式自動放置於 `~/.gemini/antigravity-cli/plugins/chinese-copywriting-agy/`，`agy` CLI、Antigravity IDE 與 Desktop 均可自動載入。
+
+### 方法二：Git Clone 全域外掛程式目錄安裝
+
+亦可手動複製此專案至全域外掛程式目錄：
+
+```bash
 git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/config/plugins/chinese-copywriting-agy
 ```
 
-### 方法二：全域技能目錄安裝（Skill 模式）
+### 方法三：全域技能目錄安裝（Skill 模式）
 
-若僅需載入技能（Skill），可將技能目錄複製至全域技能資料夾：
+若僅需單獨載入技能（Skill）：
 
 ```bash
-mkdir -p ~/.gemini/antigravity-cli/skills
-cp -r skills/chinese-copywriting-guidelines ~/.gemini/antigravity-cli/skills/
+mkdir -p ~/.gemini/skills
+cp -r skills/chinese-copywriting-guidelines ~/.gemini/skills/
 ```
 
-### 方法三：專案工作區安裝（Workspace 模式）
+### 方法四：專案工作區安裝（Workspace 模式）
 
-複製至當前專案根目錄下的 `.agents/skills/` 或 `.gemini/skills/` 資料夾，即可僅針對該專案生效：
+複製至當前專案根目錄下的 `.agents/skills/` 資料夾，即可僅針對該專案生效：
 
 ```bash
 mkdir -p .agents/skills
 cp -r skills/chinese-copywriting-guidelines .agents/skills/
 ```
 
-安裝完成後，技能（Skill）會在處理校對中文、加空格、格式化 Markdown 文件等請求時自動觸發。
-
 ---
 
 ## 使用範例
 
-### 範例 1：自然語言觸發校對
+### 1. 斜線指令（Slash Command）觸發
+
+在 `agy` CLI 中可以直接使用斜線指令呼叫技能：
+
+```text
+/chinese-copywriting-guidelines 幫我校對這段中文：今天買了iPhone12花了3萬元，用github登入。
+```
+
+### 2. 自然語言對話自動觸發
 
 > **使用者**：幫我校對這段中文：今天買了iPhone12花了3萬元，用github登入。
 
-Antigravity 會自動套用 Skill 並回覆：
+Antigravity 會自動套用技能並回覆：
 
 > **Antigravity**：今天買了 iPhone 12 花了 3 萬元，用 GitHub 登入。
 
-### 範例 2：斜線指令（Slash Command）明確觸發
-
-在 `agy` CLI 中可以直接使用斜線指令觸發：
-
-> **使用者**：`/chinese-copywriting-guidelines 幫我整理這篇關於 macos 與 typescript 的發佈說明`
-
-### 範例 3：撰寫 README
+### 3. 撰寫 README 與文件
 
 > **使用者**：幫我寫一段 Node.js 專案的中文 README 簡介。
 
 Antigravity 會產出符合排版規範的內容，例如：「這是一個以 Node.js 撰寫的 CLI 工具，支援 macOS、Linux 與 Windows。」
-
-### 範例 4：自動排除情境（不觸發）
-
-> **使用者**：幫我寫一段 Python for loop 的註解。
-
-Skill 不會觸發 —— 程式碼本體、程式碼區塊（Code Block）與行內變數屬於排除情境。
 
 ---
 

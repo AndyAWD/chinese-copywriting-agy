@@ -1,4 +1,4 @@
-# 中文文案排版指北 —— Antigravity 生態系外掛程式 (chinese-copywriting-agy)
+# 中文文案排版指北（盤古之白）Antigravity Plugin
 
 一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
 

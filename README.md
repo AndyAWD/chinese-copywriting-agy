@@ -1,6 +1,6 @@
 # 中文文案排版指北（盤古之白）Antigravity Plugin
 
-一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
+一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity 2.0 Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## 這是什麼
 
-一份把 sparanoid 的中文排版指北封裝成 **Antigravity Plugin / Skill** 的套件。安裝後，當你請 Antigravity（`agy` CLI / IDE / Desktop）撰寫或校對中文文件時，AI 會自動套用這些規則：
+一份把 sparanoid 的中文排版指北封裝成 **Antigravity Plugin / Skill** 的套件。安裝後，當你請 Antigravity 全系列介面（`agy` CLI / IDE / 2.0 Desktop）撰寫或校對中文文件時，AI 會自動套用這些規則：
 
 - 中文與英文、數字之間補上半形空格。
 - 中文語境下使用全形標點（`，。！？「」`）。
@@ -23,25 +23,27 @@
 
 ---
 
-## 安裝方式
+## 安裝方式（跨 CLI / IDE / 2.0 全系列介面）
 
-### 方法一：使用 `agy` CLI 指令安裝（Plugin 模式，推薦）
+### 方法一：全域外掛程式中央目錄安裝（Plugin 模式，推薦）
 
-執行 `agy` CLI 內建的外掛程式安裝指令：
+複製此專案至 Antigravity 全域外掛程式中央目錄 `~/.gemini/config/plugins/`，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity 2.0 (Desktop)** 均可自動掃描並共享載入：
+
+```bash
+git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/config/plugins/chinese-copywriting-agy
+```
+
+> **說明**：`~/.gemini/config/plugins/` 是 Antigravity 生態系的中央全域外掛目錄。以此方式安裝後，跨 CLI、IDE 與 2.0 全系列介面均可自動共享此外掛。
+
+### 方法二：使用 `agy` CLI 內建指令安裝
+
+亦可在 terminal 執行 `agy` CLI 內建的外掛程式安裝命令：
 
 ```bash
 agy plugin install https://github.com/AndyAWD/chinese-copywriting-agy
 ```
 
-> CLI 會將外掛程式自動放置於 `~/.gemini/antigravity-cli/plugins/chinese-copywriting-agy/`，`agy` CLI、Antigravity IDE 與 Desktop 均可自動載入。
-
-### 方法二：Git Clone 全域外掛程式目錄安裝
-
-亦可手動複製此專案至全域外掛程式目錄：
-
-```bash
-git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/config/plugins/chinese-copywriting-agy
-```
+> CLI 會將外掛程式自動放置於外掛目錄中並供 Antigravity 全生態系自動載入。
 
 ### 方法三：全域技能目錄安裝（Skill 模式）
 
@@ -67,7 +69,7 @@ cp -r skills/chinese-copywriting-guidelines .agents/skills/
 
 ### 1. 斜線指令（Slash Command）觸發
 
-在 `agy` CLI 中可以直接使用斜線指令呼叫技能：
+在 `agy` CLI、IDE 或 2.0 介面中可以直接使用斜線指令呼叫技能：
 
 ```text
 /chinese-copywriting-guidelines 幫我校對這段中文：今天買了iPhone12花了3萬元，用github登入。

@@ -23,56 +23,26 @@
 
 ---
 
-## 安裝方式（跨 CLI / IDE / 2.0 全系列介面）
+## 安裝方式
 
-### 方法一：全域外掛程式中央目錄安裝（Plugin 模式，推薦）
-
-複製此專案至 Antigravity 全域外掛程式中央目錄 `~/.gemini/config/plugins/`，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity 2.0 (Desktop)** 均可自動掃描並共享載入：
-
-```bash
-git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/config/plugins/chinese-copywriting-agy
-```
-
-> **說明**：`~/.gemini/config/plugins/` 是 Antigravity 生態系的中央全域外掛目錄。以此方式安裝後，跨 CLI、IDE 與 2.0 全系列介面均可自動共享此外掛。
-
-### 方法二：使用 `agy` CLI 內建指令安裝
-
-亦可在 terminal 執行 `agy` CLI 內建的外掛程式安裝命令：
+使用 `agy` CLI 內建的外掛程式安裝指令即可一步完成安裝：
 
 ```bash
 agy plugin install https://github.com/AndyAWD/chinese-copywriting-agy
 ```
 
-> CLI 會將外掛程式自動放置於外掛目錄中並供 Antigravity 全生態系自動載入。
-
-### 方法三：全域技能目錄安裝（Skill 模式）
-
-若僅需單獨載入技能（Skill）：
-
-```bash
-mkdir -p ~/.gemini/skills
-cp -r skills/chinese-copywriting-guidelines ~/.gemini/skills/
-```
-
-### 方法四：專案工作區安裝（Workspace 模式）
-
-複製至當前專案根目錄下的 `.agents/skills/` 資料夾，即可僅針對該專案生效：
-
-```bash
-mkdir -p .agents/skills
-cp -r skills/chinese-copywriting-guidelines .agents/skills/
-```
+> **說明**：安裝完成後，Antigravity 全生態系（`agy` CLI、Antigravity IDE 與 Antigravity 2.0 Desktop）均會自動掃描並載入此外掛。
 
 ---
 
 ## 使用範例
 
-### 1. 斜線指令（Slash Command）觸發
+### 1. 外掛斜線指令（Slash Command）觸發
 
-在 `agy` CLI、IDE 或 2.0 介面中可以直接使用斜線指令呼叫技能：
+在 Antigravity 介面中可以直接使用外掛命名空間斜線指令呼叫技能：
 
 ```text
-/chinese-copywriting-guidelines 幫我校對這段中文：今天買了iPhone12花了3萬元，用github登入。
+/chinese-copywriting-agy:guidelines 幫我校對這段中文：今天買了iPhone12花了3萬元，用github登入。
 ```
 
 ### 2. 自然語言對話自動觸發
@@ -102,7 +72,7 @@ Antigravity 會產出符合排版規範的內容，例如：「這是一個以 N
 | **專有名詞正確大小寫** | iPhone、macOS、TypeScript |
 | **不重複使用標點** | 太厲害了！（❌ 太厲害了！！！！）|
 
-完整規則與邊界情況請見 [`skills/chinese-copywriting-guidelines/SKILL.md`](skills/chinese-copywriting-guidelines/SKILL.md)。
+完整規則與邊界情況請見 [`skills/guidelines/SKILL.md`](skills/guidelines/SKILL.md)。
 
 ---
 

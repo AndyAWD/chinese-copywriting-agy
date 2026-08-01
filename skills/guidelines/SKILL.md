@@ -1,5 +1,5 @@
 ---
-name: chinese-copywriting-guidelines
+name: guidelines
 description: 套用 sparanoid/chinese-copywriting-guidelines 的中文文案排版規則 —— 中英文與數字之間補空格、使用全形中文標點、專有名詞正確大小寫（如 GitHub、iPhone、TypeScript、macOS）。當使用者明確請求「校對中文」「套用中文排版」「加空格」「pangu」「中文格式化」，或是 Antigravity 生態系（含 agy CLI, Antigravity IDE, Antigravity 2.0 Desktop）在撰寫、編輯 .md、.mdx、.txt、.rst 等文件檔的中文內容時，務必觸發此 skill。程式碼、code comments、字串常數、URL、檔名、以及純英文內容不套用。
 ---
 

@@ -29,33 +29,33 @@
 
 ## 安裝方式（適用全系列介面）
 
-### 方法一：全域外掛程式目錄安裝（Plugin モード）
+### 方法一：全域外掛程式目錄安裝（Plugin 模式，推薦）
 
-複製此專案至 Antigravity 全域外掛程式目錄，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity Desktop/Backup** 均可自動掃描並加載：
+將此專案複製至 Antigravity 全域外掛程式（Plugins）目錄，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity Desktop** 均可自動掃描並載入：
 
 ```bash
 git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/config/plugins/chinese-copywriting-agy
 ```
 
-### 方法二：全域技能目錄安裝（Skill モード）
+### 方法二：全域技能目錄安裝（Skill 模式）
 
-若僅需載入技能，可將技能目錄複製至全域技能資料夾：
+若僅需載入技能（Skill），可將技能目錄複製至全域技能資料夾：
 
 ```bash
 mkdir -p ~/.gemini/skills
 cp -r skills/chinese-copywriting-guidelines ~/.gemini/skills/
 ```
 
-### 方法三：專案本機工作區安裝（Workspace モード）
+### 方法三：專案工作區安裝（Workspace 模式）
 
-複製至專案根目錄下的 `.agents/skills/` 資料夾，即可僅針對該專案生效：
+複製至當前專案根目錄下的 `.agents/skills/` 資料夾，即可僅針對該專案生效：
 
 ```bash
 mkdir -p .agents/skills
 cp -r skills/chinese-copywriting-guidelines .agents/skills/
 ```
 
-安裝完成後，Skill 會在處理校對中文、加空格、格式化 Markdown 文件等請求時自動觸發。
+安裝完成後，技能（Skill）會在處理校對中文、加空格、格式化 Markdown 文件等請求時自動觸發。
 
 ## 使用範例
 

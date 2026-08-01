@@ -1,6 +1,6 @@
 # Chinese Copywriting Guidelines for Antigravity Ecosystem (chinese-copywriting-agy)
 
-一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity Backup / Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
+一個適用於 [Antigravity 生態系](https://antigravity.google)（包含 **Antigravity CLI (`agy`)**、**Antigravity IDE** 與 **Antigravity Desktop**）的外掛程式（Plugin）與技能（Skill），讓 AI 在撰寫或校對中文文件時，自動遵守中文文案排版規範（中英數空格、全形標點、專有名詞大小寫等）。
 
 ---
 
@@ -14,18 +14,18 @@
 
 ## 這是什麼
 
-一份把 sparanoid 的中文排版指北封裝成 **Antigravity Plugin / Skill** 的套件。安裝後，當你請 Antigravity (AGY CLI / IDE / Backup) 撰寫或校對中文文件時，AI 會自動套用這些規則：
+一份把 sparanoid 的中文排版指北封裝成 **Antigravity Plugin / Skill** 的套件。安裝後，當你請 Antigravity（`agy` CLI / IDE / Desktop）撰寫或校對中文文件時，AI 會自動套用這些規則：
 
-- 中文與英文、數字之間補上半形空格
-- 中文語境下使用全形標點（`，。！？「」`）
-- 專有名詞使用正確拼寫（`GitHub`、`iPhone`、`macOS`、`TypeScript`⋯）
-- 不重複使用標點、不使用不道地的縮寫
+- 中文與英文、數字之間補上半形空格。
+- 中文語境下使用全形標點（`，。！？「」`）。
+- 專有名詞使用正確拼寫（`GitHub`、`iPhone`、`macOS`、`TypeScript`⋯）。
+- 不重複使用標點、不使用不道地的縮寫。
 
 ## 誰適合用
 
-- 部落客、技術寫作者：讓 Antigravity 幫你產出的 README、部落格文章、技術文件自動符合規範
-- 開源專案維護者：維持 `.md` 文件排版一致性
-- 團隊協作：讓 AI 產出的中文內容有統一風格
+- **部落客、技術寫作者**：讓 Antigravity 幫你產出的 README、部落格文章、技術文件自動符合規範。
+- **開源專案維護者**：維持 `.md` 文件排版一致性。
+- **團隊協作**：讓 AI 產出的中文內容有統一風格。
 
 ## 安裝方式（適用全系列介面）
 
@@ -34,6 +34,10 @@
 將此專案複製至 Antigravity 全域外掛程式（Plugins）目錄，**Antigravity CLI (`agy`)、Antigravity IDE 與 Antigravity Desktop** 均可自動掃描並載入：
 
 ```bash
+# 方式 A：複製至 agy CLI 外掛目錄
+git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/antigravity-cli/plugins/chinese-copywriting-agy
+
+# 方式 B：複製至全域設定外掛目錄
 git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/config/plugins/chinese-copywriting-agy
 ```
 
@@ -42,13 +46,13 @@ git clone https://github.com/AndyAWD/chinese-copywriting-agy.git ~/.gemini/confi
 若僅需載入技能（Skill），可將技能目錄複製至全域技能資料夾：
 
 ```bash
-mkdir -p ~/.gemini/skills
-cp -r skills/chinese-copywriting-guidelines ~/.gemini/skills/
+mkdir -p ~/.gemini/antigravity-cli/skills
+cp -r skills/chinese-copywriting-guidelines ~/.gemini/antigravity-cli/skills/
 ```
 
 ### 方法三：專案工作區安裝（Workspace 模式）
 
-複製至當前專案根目錄下的 `.agents/skills/` 資料夾，即可僅針對該專案生效：
+複製至當前專案根目錄下的 `.agents/skills/` 或 `.gemini/skills/` 資料夾，即可僅針對該專案生效：
 
 ```bash
 mkdir -p .agents/skills
@@ -57,40 +61,52 @@ cp -r skills/chinese-copywriting-guidelines .agents/skills/
 
 安裝完成後，技能（Skill）會在處理校對中文、加空格、格式化 Markdown 文件等請求時自動觸發。
 
+---
+
 ## 使用範例
 
-**範例 1：明確請求校對**
+### 範例 1：自然語言觸發校對
 
-> 幫我校對這段中文：今天買了iPhone12花了3萬元，用github登入。
+> **使用者**：幫我校對這段中文：今天買了iPhone12花了3萬元，用github登入。
 
-Antigravity 會回覆：
+Antigravity 會自動套用 Skill 並回覆：
 
-> 今天買了 iPhone 12 花了 3 萬元，用 GitHub 登入。
+> **Antigravity**：今天買了 iPhone 12 花了 3 萬元，用 GitHub 登入。
 
-**範例 2：撰寫 README**
+### 範例 2：斜線指令（Slash Command）明確觸發
 
-> 幫我寫一段 Node.js 專案的中文 README 簡介。
+在 `agy` CLI 中可以直接使用斜線指令觸發：
+
+> **使用者**：`/chinese-copywriting-guidelines 幫我整理這篇關於 macos 與 typescript 的發佈說明`
+
+### 範例 3：撰寫 README
+
+> **使用者**：幫我寫一段 Node.js 專案的中文 README 簡介。
 
 Antigravity 會產出符合排版規範的內容，例如：「這是一個以 Node.js 撰寫的 CLI 工具，支援 macOS、Linux 與 Windows。」
 
-**範例 3：不觸發**
+### 範例 4：自動排除情境（不觸發）
 
-> 幫我寫一段 Python for loop 的註解。
+> **使用者**：幫我寫一段 Python for loop 的註解。
 
-Skill 不會觸發 —— 程式碼註解、code comments 屬於排除情境。
+Skill 不會觸發 —— 程式碼本體、程式碼區塊（Code Block）與行內變數屬於排除情境。
+
+---
 
 ## 規則摘要
 
-| 規則 | 範例 |
-|------|------|
-| 中英文之間加空格 | 在 GitHub 上發表文章 |
-| 中文與數字之間加空格 | 花了 3000 元 |
-| 數字與單位之間加空格 | 20 TB 硬碟（`°`、`%` 例外：`26°C`、`78%`）|
-| 中文用全形標點 | 你好，世界！ |
-| 專有名詞正確大小寫 | iPhone、macOS、TypeScript |
-| 不重複使用標點 | 太厲害了！（❌ 太厲害了！！！！）|
+| 規則種類 | 範例 |
+| :--- | :--- |
+| **中英文之間加空格** | 在 GitHub 上發表文章 |
+| **中文與數字之間加空格** | 花了 3000 元 |
+| **數字與單位之間加空格** | 20 TB 硬碟（`°`、`%` 例外：`26°C`、`78%`）|
+| **中文使用全形標點** | 你好，世界！ |
+| **專有名詞正確大小寫** | iPhone、macOS、TypeScript |
+| **不重複使用標點** | 太厲害了！（❌ 太厲害了！！！！）|
 
 完整規則與邊界情況請見 [`skills/chinese-copywriting-guidelines/SKILL.md`](skills/chinese-copywriting-guidelines/SKILL.md)。
+
+---
 
 ## 授權
 
